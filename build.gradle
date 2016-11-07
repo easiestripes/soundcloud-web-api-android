@@ -1,0 +1,28 @@
+apply plugin: 'idea'
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:2.2.2'
+    classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+    classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.1.1'
+  }
+}
+
+allprojects {
+  repositories {
+    mavenCentral()
+    jcenter()
+
+    maven {
+      url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
+    }
+  }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion '2.14.1'
+}
