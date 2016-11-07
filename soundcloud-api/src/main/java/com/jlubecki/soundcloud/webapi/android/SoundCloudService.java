@@ -154,7 +154,6 @@ public interface SoundCloudService {
      * Uploads an audio file to the user's SoundCloud account.
      *
      * @param track a Track object that contains at least a title and file.
-     * @return The call that can be used to get the data.
      */
     @POST("tracks")
     Call<Track> postUpload(@Body Track track);
